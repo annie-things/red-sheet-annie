@@ -35,6 +35,25 @@ h1, h2, h3, h4, h5, h6 {
 /* Main wrapper */
 #wrapper {
     background-color: #002330 !important;
+    margin: auto !important;
+    max-width: 1020px !important;
+}
+
+.thin {
+    background-color: transparent !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: -4px !important;
+}
+
+.main_column {
+    background-color: transparent !important;
+    flex: 3 !important;
+}
+
+.sidebar {
+    flex: 1 !important;
+    order: 5 !important;
 }
 
 /* Header area - don't break it */
@@ -74,13 +93,20 @@ h1, h2, h3, h4, h5, h6 {
 /* Tables */
 table {
     background-color: #181d1d !important;
+    border-collapse: collapse !important;
+    margin: 8px 0 !important;
+    width: 100% !important;
 }
 
-tr:nth-child(even) {
+table .rowa, table .rowb {
+    border-top: 2px solid rgba(45, 57, 58, .33) !important;
+}
+
+table .rowa:nth-child(2n), table .rowb:nth-child(2n) {
     background-color: #1d2424 !important;
 }
 
-tr:nth-child(odd) {
+table .rowa:nth-child(odd), table .rowb:nth-child(odd) {
     background-color: #252f32 !important;
 }
 
@@ -91,10 +117,29 @@ tr:hover {
 .colhead, .colhead_dark {
     background-color: #324041 !important;
     color: #f8fbf6 !important;
+    line-height: 18px !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1 !important;
+}
+
+.colhead_dark td, .colhead td {
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
 }
 
 td {
     color: #f8fbf6 !important;
+    padding: 4px 6px !important;
+}
+
+td:first-child {
+    padding-left: 12px !important;
+}
+
+td:last-child {
+    padding-right: 12px !important;
 }
 
 /* Boxes - FIXED */
@@ -102,6 +147,10 @@ td {
     background-color: #181d1d !important;
     margin-bottom: 8px !important;
     margin-top: 8px !important;
+}
+
+table.box, table.box2 {
+    overflow: auto !important;
 }
 
 .head {
@@ -123,6 +172,14 @@ td {
     border: 2px solid #3c4d50 !important;
     margin: 8px !important;
     border-radius: .25rem !important;
+}
+
+/* Content wrapper */
+#content > .thin:not(:has(table)),
+.main_column:not(:has(table)),
+.sidebar,
+body#user .main_column {
+    overflow: hidden !important;
 }
 
 /* Sidebar boxes */
@@ -171,12 +228,21 @@ td {
     background-color: #1d2424 !important;
 }
 
+.torrent_table tr:not(.colhead, .colhead_dark) {
+    border-top: 2px solid rgba(45, 57, 58, .53) !important;
+}
+
 .torrent_table .group {
     background-color: #222b2b !important;
 }
 
 .group_torrent {
     background-color: #181d1d !important;
+}
+
+#torrents #torrent_details .group_torrent td.edition_info,
+.group~.group_torrent.edition {
+    background-color: #0c4a3b !important;
 }
 
 /* Forms and inputs */
