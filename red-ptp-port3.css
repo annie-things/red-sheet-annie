@@ -1,0 +1,381 @@
+/* RED: PTP palette + JuliaMono — single-sheet build with header/searchbar fixes */
+
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace svg "http://www.w3.org/2000/svg";
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.060/juliamono.min.css");
+
+/* ===== Tokens from ptpcurrent.css ===== */
+:root {
+    --ptp-font: 'JuliaMono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ptp-bg: #002330;
+    --ptp-text: #f8fbf6;
+    --ptp-muted: #dcdfe4;
+    --ptp-link: #CCD6E5;
+    --ptp-link-hover: #F9E294;
+    --ptp-panel: #0d5263;
+    --ptp-row: #134258;
+    --ptp-row-alt: #1d2424;
+    --ptp-row-hover: #064554;
+    --ptp-head: #324041;
+    --ptp-border: #57595e;
+    --ptp-box-border: #3c4d50;
+    --ptp-pill-bg: #0c4a3b;
+    --ptp-pill-fg: #20c098;
+}
+
+/* ===== Base ===== */
+body,button,input,select,textarea,h1,h2,h3,h4,h5,h6,.tooltipster-default .tooltipster-content { font-family: var(--ptp-font) !important; letter-spacing: -0.04em !important; }
+body { background-color: var(--ptp-bg) !important; color: var(--ptp-text) !important; font-size: 12px !important; }
+a { color: var(--ptp-link) !important; text-decoration: none !important; }
+a:hover { color: var(--ptp-link-hover) !important; text-decoration: underline !important; }
+h1,h2,h3,h4,h5,h6 { color: var(--ptp-text) !important; font-weight: 600 !important; }
+
+/* ===== Header & Menu — enforce working layout ===== */
+#header, #userinfo { position: relative !important; }
+#header { display: flex !important; flex-direction: column !important; }
+#header ul { margin: 0 !important; padding: 0 !important; list-style: none !important; }
+
+#menu>ul { display: flex !important; flex-flow: row nowrap !important; width: calc(100% - 149px) !important; overflow: hidden !important; }
+#menu>ul li { flex: 1 1 auto !important; }
+#menu>ul a { display: block !important; height: 100% !important; line-height: 50px !important; text-align: center !important; white-space: nowrap !important; }
+#menu li, #menu li:nth-child(n) { background: transparent !important; }
+#menu a { color: var(--ptp-text) !important; }
+#menu a:hover { background-color: rgba(255,255,255,.2) !important; color: var(--ptp-link-hover) !important; }
+#menu { border-radius: 5px 5px 0 0 !important; overflow: hidden !important; }
+#nav_index { display: none !important; }
+
+#logo { box-sizing: content-box !important; height: 42px !important; padding: 24px 8px 16px !important; width: 200px !important; }
+#logo a { display: block !important; height: 100% !important; background-size: 200px !important; margin-top: 0 !important; }
+
+/* User info blocks (match working custom sheets) */
+#userinfo_minor, #userinfo_username { position: absolute !important; z-index: 900 !important; }
+#userinfo_minor:hover, #userinfo_username:hover { z-index: 800 !important; }
+#userinfo_username { right: 50px !important; }
+#userinfo_minor { right: 0 !important; border-radius: 0 5px 0 0 !important; }
+#userinfo_major, #userinfo_stats { position: absolute !important; display: flex !important; right: 8px !important; flex-flow: row nowrap !important; }
+#userinfo_major { right: 41px !important; top: -53px !important; }
+#userinfo_stats { top: -31px !important; }
+#userinfo_major>li, #userinfo_stats>li { display: inline-block !important; margin-left: 8px !important; }
+#userinfo a { color: var(--ptp-text) !important; }
+#userinfo a:hover { color: var(--ptp-link-hover) !important; }
+
+/* ===== Searchbars & filter actions — fix stacking ===== */
+#searchbars>ul { display: flex !important; flex-flow: row nowrap !important; align-items: center !important; height: 50px !important; padding: 0 9px !important; width: 100% !important; }
+#searchbars>ul li { flex: 1 1 auto !important; margin-right: 9px !important; }
+#searchbars>ul li:last-child { margin-right: 0 !important; }
+#searchbars .search_form { background: transparent !important; }
+#searchbars .search_form input { height: 30px !important; border-radius: 4px !important; border: 1px solid var(--ptp-border) !important; background: #1d2424 !important; color: var(--ptp-text) !important; }
+#searchbars .search_form input:focus { background: #121616 !important; }
+
+#torrents .filter_torrents .ft_submit { display: flex !important; flex-flow: row nowrap !important; align-items: center !important; }
+#torrents .filter_torrents .ft_submit input,
+#torrents .filter_torrents .ft_submit label { margin-right: 4px !important; }
+#torrents .filter_torrents .ft_submit span { order: 2 !important; }
+
+button, input[type=submit], input[type=button] { display: inline-block !important; vertical-align: middle !important; }
+
+/* ===== Forms ===== */
+form { background-color: #181d1d !important; }
+input[type="text"], input[type="password"], input[type="email"], input[type="search"], input[type="date"], textarea, select {
+    background-color: #005469 !important; color: var(--ptp-text) !important; border: 1px solid var(--ptp-border) !important; border-radius: 4px !important; padding: 6px !important;
+}
+input:focus, select:focus, textarea:focus { border-color: #268bd2 !important; outline: none !important; box-shadow: 0 0 0 2px rgba(74,158,255,.2) !important; }
+button, input[type="submit"], input[type="button"] { background-color: #505050 !important; border: 1px solid var(--ptp-border) !important; color: var(--ptp-text) !important; border-radius: 4px !important; padding: 6px 12px !important; cursor: pointer !important; }
+button:hover, input[type="submit"]:hover, input[type="button"]:hover { color: var(--ptp-link-hover) !important; transform: translateY(-1px) !important; }
+
+/* ===== Boxes ===== */
+.box, .box2 { background-color: #181d1d !important; margin: 8px 0 !important; border: 2px solid var(--ptp-box-border) !important; border-radius: .25rem !important; }
+.head { background: linear-gradient(29deg, rgba(180,60,199,.91) 0%, rgba(219,31,87,.83) 47%, rgba(201,107,20,.9) 91%) !important; color: var(--ptp-text) !important; padding: 12px !important; }
+.body, .pad { padding: 12px !important; background-color: var(--ptp-panel) !important; color: var(--ptp-text) !important; }
+.body .box.pad:not(#reply_box), .box .box.pad, .main_column .box.pad:not(#reply_box) { background-color: rgba(110.7,149,169,.15) !important; border: 2px solid var(--ptp-box-border) !important; margin: 8px !important; border-radius: .25rem !important; }
+
+/* ===== Tables ===== */
+#content table { background-color: #181d1d !important; border-collapse: collapse !important; }
+#content table:not(.layout) .rowa, #content table:not(.layout) .rowb { border-top: 2px solid rgba(45,57,58,.33) !important; }
+.torrent_table, .filelist_table, table.box, table.box2 { background-color: var(--ptp-row-alt) !important; }
+.torrent_table tr:not(.colhead):not(.colhead_dark), .filelist_table tr:not(.colhead):not(.colhead_dark) { border-top: 2px solid rgba(45,57,58,.53) !important; }
+.torrent_table .group { background-color: #222b2b !important; }
+.group_torrent { background-color: #181d1d !important; }
+.colhead, .colhead_dark, #content div.thin div.head { background-color: var(--ptp-head) !important; color: var(--ptp-text) !important; line-height: 18px !important; }
+.torrent_table tr:hover, .filelist_table tr:hover, #content table:not(.layout) tr:hover { background-color: var(--ptp-row-hover) !important; }
+td { color: var(--ptp-text) !important; padding: 4px 6px !important; }
+
+/* ===== Tags / pills ===== */
+.tags a { color: var(--ptp-muted) !important; font-size: 11px !important; }
+.tags a:hover { color: var(--ptp-link-hover) !important; }
+#artist .sidebar div.box.box_tags ul.stats.nobullet li a, #better .tags, #discog_table .group .tags :not(:empty), #request_table .tags, #taglist td a, #top10 .tags, #torrent_table .group .tags :not(:empty), body#torrents div.box.box_tags li>a:first-child { visibility: visible !important; box-sizing: border-box !important; display: inline-block !important; font-weight: 700 !important; font-size: .6rem !important; color: var(--ptp-pill-fg) !important; background: var(--ptp-pill-bg) !important; padding: 0 .5rem !important; border-radius: 1rem !important; margin-bottom: .1rem !important; }
+
+/* ===== Status / ratio colors ===== */
+.r00, .ratio-00 { color: #dc322f !important; }
+.r01, .r02, .r03, .ratio-01, .ratio-02, .ratio-03 { color: #ff6b6b !important; }
+.r04, .r05, .r06, .ratio-04, .ratio-05, .ratio-06 { color: #cb7b18 !important; }
+.r07, .r08, .r09, .ratio-07, .ratio-08, .ratio-09 { color: #ffd93d !important; }
+.r10, .r20, .r50, .r99, .ratio-10, .ratio-20, .ratio-50, .ratio-infinite { color: #859900 !important; }
+.torrent-info-link--user-seeding { color: #859900 !important; font-weight: 600 !important; }
+.torrent-info-link--user-leeching { color: #b58900 !important; font-weight: 600 !important; }
+.torrent-info-link--user-snatched { color: #148ca1 !important; font-weight: 600 !important; }
+
+/* ===== Code, quotes, selection, scrollbar ===== */
+code, pre { background-color: #005469 !important; border: 1px solid var(--ptp-border) !important; color: #a7b4a8 !important; padding: 4px !important; border-radius: 3px !important; font-family: var(--ptp-font) !important; }
+blockquote { background-color: rgba(110.7,149,169,.15) !important; border: 1px dashed var(--ptp-box-border) !important; padding: 12px !important; margin: 12px !important; color: var(--ptp-text) !important; }
+::selection { background-color: #268bd2 !important; color: var(--ptp-text) !important; }
+::-webkit-scrollbar { width: 8px !important; height: 8px !important; }
+::-webkit-scrollbar-track { background: #005469 !important; }
+::-webkit-scrollbar-thumb { background: var(--ptp-border) !important; border-radius: 4px !important; }
+::-webkit-scrollbar-thumb:hover { background: #858585 !important; }
+
+/* ===== Inline style overrides from posts ===== */
+[style*="background: white"], [style*="background-color: white"], [style*="background:#fff"], [style*="background-color:#fff"], [style*="background: #fff"], [style*="background-color: #fff"] { background-color: var(--ptp-panel) !important; }
+[style*="color: black"], [style*="color:#000"], [style*="color: #000"] { color: var(--ptp-text) !important; }
+
+/* END */
+
+/* RED: PTP palette + JuliaMono, non-destructive (no layout changes) */
+
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace svg "http://www.w3.org/2000/svg";
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.060/juliamono.min.css");
+
+/* ===== Design tokens (from ptpcurrent.css) ===== */
+:root {
+    --ptp-font: 'JuliaMono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ptp-bg: #002330;
+    --ptp-text: #f8fbf6;
+    --ptp-muted: #dcdfe4;
+    --ptp-link: #CCD6E5;
+    --ptp-link-hover: #F9E294;
+    --ptp-panel: #0d5263;
+    --ptp-row: #134258;
+    --ptp-row-alt: #1d2424;
+    --ptp-row-hover: #064554;
+    --ptp-head: #324041;
+    --ptp-border: #57595e;
+    --ptp-box-border: #3c4d50;
+    --ptp-pill-bg: #0c4a3b;
+    --ptp-pill-fg: #20c098;
+}
+
+/* ===== Base (font, colors) ===== */
+body,
+button,
+input,
+select,
+textarea,
+h1, h2, h3, h4, h5, h6,
+.tooltipster-default .tooltipster-content {
+    font-family: var(--ptp-font) !important;
+    letter-spacing: -0.04em !important;
+}
+
+body {
+    background-color: var(--ptp-bg) !important;
+    color: var(--ptp-text) !important;
+    font-size: 12px !important;
+}
+
+a { color: var(--ptp-link) !important; text-decoration: none !important; }
+a:hover { color: var(--ptp-link-hover) !important; text-decoration: underline !important; }
+
+h1, h2, h3, h4, h5, h6 { color: var(--ptp-text) !important; font-weight: 600 !important; }
+
+/* ===== Header and navigation (force correct layout; no visual gimmicks) ===== */
+#header { background-color: transparent !important; }
+#header, #userinfo { position: relative !important; }
+#header ul { margin: 0 !important; padding: 0 !important; list-style: none !important; }
+
+/* Keep RED's horizontal menu so items don't stack vertically */
+#menu>ul { display: flex !important; flex-flow: row nowrap !important; width: calc(100% - 149px) !important; overflow: hidden !important; }
+#menu>ul li { flex: 1 1 auto !important; }
+#menu>ul a { display: block !important; height: 100% !important; line-height: 50px !important; text-align: center !important; white-space: nowrap !important; }
+
+/* Logo sizing so header height is consistent */
+#logo { box-sizing: content-box !important; height: 42px !important; padding: 24px 8px 16px !important; width: 200px !important; }
+#logo a { display: block !important; height: 100% !important; background-size: 200px !important; margin-top: 0 !important; }
+
+/* Navigation colors */
+#menu a { color: var(--ptp-text) !important; }
+#menu a:hover { background-color: rgba(255,255,255,.2) !important; color: var(--ptp-link-hover) !important; }
+
+/* Remove li background striping that caused wide green bars */
+#menu li { background: transparent !important; }
+
+/* Explicitly override any nth-child menu backgrounds from other styles */
+#menu li:nth-child(n) { background: transparent !important; }
+
+/* User sections positioning to match working RED custom sheets */
+#userinfo_minor, #userinfo_username { position: absolute !important; z-index: 900 !important; }
+#userinfo_minor:hover, #userinfo_username:hover { z-index: 800 !important; }
+#userinfo_minor a, #userinfo_username a { display: none !important; padding: 0 8px !important; line-height: 32px !important; width: 150px !important; }
+#userinfo_minor:hover a, #userinfo_username:hover a { display: block !important; }
+#userinfo_username { right: 50px !important; }
+#userinfo_minor { right: 0 !important; border-radius: 0 5px 0 0 !important; }
+
+#userinfo_major, #userinfo_stats { position: absolute !important; display: flex !important; right: 8px !important; flex-flow: row nowrap !important; }
+#userinfo_major { right: 41px !important; top: -53px !important; }
+#userinfo_stats { top: -31px !important; }
+
+/* Misc header harmonization */
+#nav_index { display: none !important; }
+#menu { border-radius: 5px 5px 0 0 !important; overflow: hidden !important; }
+
+/* User info: do not alter positioning; only harmonize link colors */
+#userinfo a { color: var(--ptp-text) !important; }
+#userinfo a:hover { color: var(--ptp-link-hover) !important; }
+
+/* ===== Forms and inputs ===== */
+form { background-color: #181d1d !important; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="date"],
+textarea,
+select {
+    background-color: #005469 !important;
+    color: var(--ptp-text) !important;
+    border: 1px solid var(--ptp-border) !important;
+    border-radius: 4px !important;
+    padding: 6px !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #268bd2 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(74,158,255,.2) !important;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+    background-color: #505050 !important;
+    border: 1px solid var(--ptp-border) !important;
+    color: var(--ptp-text) !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+    cursor: pointer !important;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover { color: var(--ptp-link-hover) !important; transform: translateY(-1px) !important; }
+
+/* ===== Boxes and panels ===== */
+.box, .box2 { background-color: #181d1d !important; margin: 8px 0 !important; border: 2px solid var(--ptp-box-border) !important; border-radius: .25rem !important; }
+.head { background: linear-gradient(29deg, rgba(180,60,199,.91) 0%, rgba(219,31,87,.83) 47%, rgba(201,107,20,.9) 91%) !important; color: var(--ptp-text) !important; padding: 12px !important; }
+.body, .pad { padding: 12px !important; background-color: var(--ptp-panel) !important; color: var(--ptp-text) !important; }
+
+/* Nested pad boxes (e.g., inside .body) */
+.body .box.pad:not(#reply_box),
+.box .box.pad,
+.main_column .box.pad:not(#reply_box) {
+    background-color: rgba(110.7,149,169,.15) !important;
+    border: 2px solid var(--ptp-box-border) !important;
+    margin: 8px !important;
+    border-radius: .25rem !important;
+}
+
+/* ===== Tables (scoped; avoid global tr/td rules) ===== */
+/* Safe defaults for site content tables */
+#content table { background-color: #181d1d !important; border-collapse: collapse !important; }
+#content table:not(.layout) .rowa,
+#content table:not(.layout) .rowb { border-top: 2px solid rgba(45,57,58,.33) !important; }
+
+/* Torrent tables and common listings */
+.torrent_table,
+.filelist_table,
+table.box,
+table.box2 { background-color: var(--ptp-row-alt) !important; }
+
+.torrent_table tr:not(.colhead):not(.colhead_dark),
+.filelist_table tr:not(.colhead):not(.colhead_dark) { border-top: 2px solid rgba(45,57,58,.53) !important; }
+
+.torrent_table .group { background-color: #222b2b !important; }
+.group_torrent { background-color: #181d1d !important; }
+
+/* Headers that stick inside tables */
+.colhead, .colhead_dark, #content div.thin div.head {
+    background-color: var(--ptp-head) !important;
+    color: var(--ptp-text) !important;
+    line-height: 18px !important;
+}
+
+/* Row hover feedback (scoped to data tables) */
+.torrent_table tr:hover, .filelist_table tr:hover, #content table:not(.layout) tr:hover {
+    background-color: var(--ptp-row-hover) !important;
+}
+
+td { color: var(--ptp-text) !important; }
+
+/* ===== Tags and pills ===== */
+.tags a { color: var(--ptp-muted) !important; font-size: 11px !important; }
+.tags a:hover { color: var(--ptp-link-hover) !important; }
+
+#artist .sidebar div.box.box_tags ul.stats.nobullet li a,
+#better .tags,
+#discog_table .group .tags :not(:empty),
+#request_table .tags,
+#taglist td a,
+#top10 .tags,
+#torrent_table .group .tags :not(:empty),
+body#torrents div.box.box_tags li > a:first-child {
+    visibility: visible !important;
+    box-sizing: border-box !important;
+    display: inline-block !important;
+    font-weight: 700 !important;
+    font-size: .6rem !important;
+    color: var(--ptp-pill-fg) !important;
+    background: var(--ptp-pill-bg) !important;
+    padding: 0 .5rem !important;
+    border-radius: 1rem !important;
+    margin-bottom: .1rem !important;
+}
+
+/* ===== Ratio/status colors (match ptpcurrent) ===== */
+.r00, .ratio-00 { color: #dc322f !important; }
+.r01, .r02, .r03, .ratio-01, .ratio-02, .ratio-03 { color: #ff6b6b !important; }
+.r04, .r05, .r06, .ratio-04, .ratio-05, .ratio-06 { color: #cb7b18 !important; }
+.r07, .r08, .r09, .ratio-07, .ratio-08, .ratio-09 { color: #ffd93d !important; }
+.r10, .r20, .r50, .r99, .ratio-10, .ratio-20, .ratio-50, .ratio-infinite { color: #859900 !important; }
+
+.torrent-info-link--user-seeding { color: #859900 !important; font-weight: 600 !important; }
+.torrent-info-link--user-leeching { color: #b58900 !important; font-weight: 600 !important; }
+.torrent-info-link--user-snatched { color: #148ca1 !important; font-weight: 600 !important; }
+
+/* ===== Code, blockquotes, selection, scrollbar ===== */
+code, pre { background-color: #005469 !important; border: 1px solid var(--ptp-border) !important; color: #a7b4a8 !important; padding: 4px !important; border-radius: 3px !important; font-family: var(--ptp-font) !important; }
+blockquote { background-color: rgba(110.7,149,169,.15) !important; border: 1px dashed var(--ptp-box-border) !important; padding: 12px !important; margin: 12px !important; color: var(--ptp-text) !important; }
+
+::selection { background-color: #268bd2 !important; color: var(--ptp-text) !important; }
+
+::-webkit-scrollbar { width: 8px !important; height: 8px !important; }
+::-webkit-scrollbar-track { background: #005469 !important; }
+::-webkit-scrollbar-thumb { background: var(--ptp-border) !important; border-radius: 4px !important; }
+::-webkit-scrollbar-thumb:hover { background: #858585 !important; }
+
+/* ===== Alerts ===== */
+.alertbar, .save_message, .sys_error { border: thick solid #157d63 !important; padding: 1rem !important; background-color: #093a2e !important; color: #c6d2c8 !important; font-weight: 700 !important; }
+.error_message { border: thick solid #eb1943 !important; padding: 1rem !important; background-color: #633 !important; color: #c6d2c8 !important; font-weight: 700 !important; }
+
+/* ===== Light touch fixes ===== */
+.linkbox { text-align: right !important; }
+.linkbox a { color: var(--ptp-link) !important; }
+.linkbox a:hover { color: var(--ptp-link-hover) !important; }
+
+/* Avoid fighting with inline whites/black styles from BBCode posts */
+[style*="background: white"],
+[style*="background-color: white"],
+[style*="background:#fff"],
+[style*="background-color:#fff"],
+[style*="background: #fff"],
+[style*="background-color: #fff"] { background-color: var(--ptp-panel) !important; }
+
+[style*="color: black"],
+[style*="color:#000"],
+[style*="color: #000"] { color: var(--ptp-text) !important; }
+
+/* END */
+
+
