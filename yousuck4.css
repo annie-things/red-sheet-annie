@@ -1,6 +1,13 @@
 @namespace "http://www.w3.org/1999/xhtml";
 @namespace svg "http://www.w3.org/2000/svg";
 
+@font-face {
+    font-family: "Neue Haas Unica Pro";
+    src: url('https://raw.githubusercontent.com/annie-things/red-sheet-annie/main/NeueHaasUnicaPro-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 :root {
     --system-ui: "Neue Haas Unica Pro", "Roboto", "Ubuntu", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --monospace-ui: "JuliaMono Regular", "Consolas", "Ubuntu Mono", "Fira Code", "Menlo", "Liberation Mono", "Monaco", monospace
