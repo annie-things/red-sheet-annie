@@ -2,7 +2,7 @@
 @namespace svg "http://www.w3.org/2000/svg";
 
 :root {
-    --system-ui: system-ui, "Neue Haas Unica Pro", "Roboto", "Ubuntu", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --system-ui: "Neue Haas Unica Pro", "Roboto", "Ubuntu", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --monospace-ui: "JuliaMono Regular", "Consolas", "Ubuntu Mono", "Fira Code", "Menlo", "Liberation Mono", "Monaco", monospace
 }
 
