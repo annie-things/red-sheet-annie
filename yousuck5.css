@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: "Neue Haas Unica Pro";
-    src: url('https://raw.githubusercontent.com/annie-things/red-sheet-annie/main/NeueHaasUnicaPro-Regular.otf') format('opentype');
+    src: url('https://raw.githubusercontent.com/annie-things/red-sheet-annie/main/afont.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
@@ -28,7 +28,10 @@ code, pre {
 }
 
 body {
-    background-color: #1e1d1f;
+    background-image: url("https://ptpimg.me/bv5d82.jpg");
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
     box-sizing: border-box;
     color: #cdb6c5;
     font-size: 14px;
