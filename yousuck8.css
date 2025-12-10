@@ -1495,7 +1495,7 @@ body#collage .cats_applications, body#collage .cats_audiobooks, body#collage .ca
 
 #searchbars>ul {
     align-items: center;
-    background-color: #3c2f33;
+    background-color: transparent;
     display: flex;
     height: 50px;
     padding: 0 9px
